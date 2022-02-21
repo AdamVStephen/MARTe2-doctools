@@ -39,4 +39,6 @@ In respect of the 6 levels set out above it shows that the application comprises
 At the object existence level, the relationships are hidden.  e.g. That each of the three real-time threads includes
 a subset of the functions.
 
+![graph](../examples/Sigtools/Waveform-1a/sta_Objects_0.png)
+
  
