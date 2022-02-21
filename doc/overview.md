@@ -24,11 +24,11 @@ A MARTe2 application is defined in several stanzas which describe respectively :
 6. Scheduler/Timer : a supervisory service for orchestrating the pace of real-time threads.
 
 Taking a simple example, the CfgToDot tool produces the following set of graphviz diagrams.
-To make this concrete, we take the case of the [Sigtools/Waveform-1a](examples/Sigtools/Waveform-1a/) application
+To make this concrete, we take the case of the [Sigtools/Waveform-1a](../examples/Sigtools/Waveform-1a/) application
 
 ### Objects Graph
 
-This is a [flat view](examples/Sigtools/Waveform-1a/sta_Objects_0.png) of the objects created in the application and how they are nested.
+This is a [flat view](../examples/Sigtools/Waveform-1a/sta_Objects_0.png) of the objects created in the application and how they are nested.
 In respect of the 6 levels set out above it shows that the application comprises
 
 - A simple Scheduler
