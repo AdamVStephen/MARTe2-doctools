@@ -44,3 +44,5 @@ sequenceDiagram
 		Si->>B: Execute()
 		B->>R:  DAC(Ch.1).Write()
 ```
+
+<!-- last updated : @f8:~/Projects/MARTe2-sigtools/MARTe2-doctools -->
