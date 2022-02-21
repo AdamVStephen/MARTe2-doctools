@@ -25,8 +25,8 @@ A MARTe2 application is defined in several stanzas which describe respectively :
 
 ```mermaid
 sequenceDiagram
-	participant R as Real-Time Thread
 	participant P as Power Function
+	participant R as Real-Time Thread
 	participant So as Data Source
 	participant B as Broker
 	participant Si as Data Sink
