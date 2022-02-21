@@ -53,4 +53,19 @@ are shown.
 
 ![graph](../examples/Sigtools/Waveform-1a/sta_RTApp.png)
 
+### Per State Real-Time Thread Graphs
+
+For each state, a separate diagram is created which shows in more detail the relationships betwen the data sources and the functions.
+Again, the object names and underlying classes are provided.  For this example we get three diagrams
+
+1. [Idle](../examples/Sigtools/Waveform-1a/sta_StateIdle.png)
+1. [Run](../examples/Sigtools/Waveform-1a/sta_StateRun.png)
+1. [Error](../examples/Sigtools/Waveform-1a/sta_StateError.png)
+
+For brevity, only the most interesting State for this application is included inline here.
+
+![graph](../examples/Sigtools/Waveform-1a/sta_StateRun.png)
+
+
+
 
