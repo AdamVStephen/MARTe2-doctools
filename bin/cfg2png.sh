@@ -3,7 +3,8 @@
 export M2TOOLS_DIR=../../MARTe2-tools/Build/x86-linux/Source/
 CFGTODOT=$(realpath $M2TOOLS_DIR/CfgToDot.ex)
 
-find .. -name "*.cfg" | head -1 |
+#find .. -name "*.cfg" | head -1 |
+find .. -name "*.cfg" | 
 while read cfg
 do
   location=$(dirname $cfg)

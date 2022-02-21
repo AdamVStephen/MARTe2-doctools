@@ -1,0 +1,91 @@
+digraph G {
+bgcolor=white
+subgraph cluster_StateMachine {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StateMachine <BR/>(StateMachine)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineINITIAL {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">INITIAL <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineINITIALSTART {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">START <BR/>(StateMachineEvent)</font></TD></TR></TABLE>>
+StateMachineINITIALSTARTStartHttpServer [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartHttpServer <BR/>(Message)</font></TD></TR></TABLE>>]
+StateMachineINITIALSTARTStartEPICSCAInterface [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartEPICSCAInterface <BR/>(Message)</font></TD></TR></TABLE>>]
+subgraph cluster_StateMachineINITIALSTARTChangeToStateIdleMsg {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ChangeToStateIdleMsg <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineINITIALSTARTChangeToStateIdleMsgParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+StateMachineINITIALSTARTStartNextStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartNextStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+}
+}
+subgraph cluster_StateMachineIDLE {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">IDLE <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineIDLEENTER {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ENTER <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+StateMachineIDLEENTERDoSomethingWhenEntering [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">DoSomethingWhenEntering <BR/>(Message)</font></TD></TR></TABLE>>]
+}
+subgraph cluster_StateMachineIDLEGOTORUN {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GOTORUN <BR/>(StateMachineEvent)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineIDLEGOTORUNChangeToRunMsg {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ChangeToRunMsg <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineIDLEGOTORUNChangeToRunMsgParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+StateMachineIDLEGOTORUNStopCurrentStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StopCurrentStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+StateMachineIDLEGOTORUNStartNextStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartNextStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+}
+}
+subgraph cluster_StateMachineRUN {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">RUN <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineRUNENTER {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ENTER <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineRUNENTERSetStatusPV {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">SetStatusPV <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineRUNENTERSetStatusPVParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+}
+subgraph cluster_StateMachineRUNFLUSH {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">FLUSH <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+StateMachineRUNFLUSHDoSomethingWhenEntering [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">DoSomethingWhenEntering <BR/>(Message)</font></TD></TR></TABLE>>]
+}
+subgraph cluster_StateMachineRUNGOTOIDLE {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GOTOIDLE <BR/>(StateMachineEvent)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineRUNGOTOIDLEChangeToIdleMsg {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ChangeToIdleMsg <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineRUNGOTOIDLEChangeToIdleMsgParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+StateMachineRUNGOTOIDLEStopCurrentStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StopCurrentStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+StateMachineRUNGOTOIDLEStartNextStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartNextStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+subgraph cluster_StateMachineRUNGOTOIDLESetStatusPV {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">SetStatusPV <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineRUNGOTOIDLESetStatusPVParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+}
+}
+subgraph cluster_StateMachineERROR {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ERROR <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineERRORENTER {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ENTER <BR/>(ReferenceContainer)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineERRORENTERSetStatusPV {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">SetStatusPV <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineERRORENTERSetStatusPVParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+subgraph cluster_StateMachineERRORENTERChangeToErrorMsg {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ChangeToErrorMsg <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineERRORENTERChangeToErrorMsgParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+StateMachineERRORENTERStopCurrentStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StopCurrentStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+StateMachineERRORENTERStartNextStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartNextStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+}
+subgraph cluster_StateMachineERRORRESET {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">RESET <BR/>(StateMachineEvent)</font></TD></TR></TABLE>>
+subgraph cluster_StateMachineERRORRESETChangeToIdleMsg {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">ChangeToIdleMsg <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineERRORRESETChangeToIdleMsgParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+StateMachineERRORRESETStopCurrentStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StopCurrentStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+StateMachineERRORRESETStartNextStateExecutionMsg [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">StartNextStateExecutionMsg <BR/>(Message)</font></TD></TR></TABLE>>]
+subgraph cluster_StateMachineERRORRESETSetStatusPV {
+label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">SetStatusPV <BR/>(Message)</font></TD></TR></TABLE>>
+StateMachineERRORRESETSetStatusPVParameters [shape=record, style=filled, fillcolor=white, color=black,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Parameters <BR/>(ConfigurationDatabase)</font></TD></TR></TABLE>>]
+}
+}
+}
+}
+}

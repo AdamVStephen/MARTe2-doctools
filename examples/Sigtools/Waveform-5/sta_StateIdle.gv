@@ -1,0 +1,44 @@
+digraph G {
+rankdir=LR
+concentrate=true
+"Idle.Thread1.GAMTimer" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GAMTimer <BR/>(IOGAM)</font></TD></TR></TABLE>>]
+"Idle.Thread1.Waveform0" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Waveform0 <BR/>(WaveformGAM::WaveformSin)</font></TD></TR></TABLE>>]
+"Idle.Thread1.Mains1F_Statistics" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Mains1F_Statistics <BR/>(StatisticsGAM)</font></TD></TR></TABLE>>]
+"Idle.Thread1.Waveform1" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Waveform1 <BR/>(WaveformGAM::WaveformSin)</font></TD></TR></TABLE>>]
+"Idle.Thread1.Waveform2" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Waveform2 <BR/>(WaveformGAM::WaveformSin)</font></TD></TR></TABLE>>]
+"Idle.Thread1.Waveform3" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Waveform3 <BR/>(WaveformGAM::WaveformSin)</font></TD></TR></TABLE>>]
+subgraph cluster_Idle {
+label = "State: Idle"
+subgraph cluster_Idle_Thread1 {
+label = "Thread: Thread1"
+color= "red"
+"Idle.Thread1.GAMTimer"->"Idle.Thread1.Waveform0"->"Idle.Thread1.Mains1F_Statistics"->"Idle.Thread1.Waveform1"->"Idle.Thread1.Waveform2"->"Idle.Thread1.Waveform3"
+}
+}
+"+Timer"->"Idle.Thread1.GAMTimer"
+"+Timings"->"Idle.Thread1.GAMTimer"
+"Idle.Thread1.GAMTimer"->"+DDB1"
+"+DDB1"->"Idle.Thread1.Waveform0"
+"Idle.Thread1.Waveform0"->"+DDB1"
+"+DDB1"->"Idle.Thread1.Mains1F_Statistics"
+"Idle.Thread1.Mains1F_Statistics"->"+DDB1"
+"+DDB1"->"Idle.Thread1.Waveform1"
+"Idle.Thread1.Waveform1"->"+DDB1"
+"+DDB1"->"Idle.Thread1.Waveform2"
+"Idle.Thread1.Waveform2"->"+DDB1"
+"+DDB1"->"Idle.Thread1.Waveform3"
+"Idle.Thread1.Waveform3"->"+DDB1"
+"+Timer" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+Timer <BR/>(LinuxTimer)</font></TD></TR></TABLE>>]
+"+Timings" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+Timings <BR/>(TimingDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+}

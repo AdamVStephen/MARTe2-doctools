@@ -1,0 +1,24 @@
+digraph G {
+rankdir=LR
+concentrate=true
+"Error.Thread1.GAMTimer" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GAMTimer <BR/>(IOGAM)</font></TD></TR></TABLE>>]
+"Error.Thread1.Mains1F_Statistics" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">Mains1F_Statistics <BR/>(StatisticsGAM)</font></TD></TR></TABLE>>]
+subgraph cluster_Error {
+label = "State: Error"
+subgraph cluster_Error_Thread1 {
+label = "Thread: Thread1"
+color= "red"
+"Error.Thread1.GAMTimer"->"Error.Thread1.Mains1F_Statistics"
+}
+}
+"+Timer"->"Error.Thread1.GAMTimer"
+"+Timings"->"Error.Thread1.GAMTimer"
+"Error.Thread1.GAMTimer"->"+DDB1"
+"+DDB1"->"Error.Thread1.Mains1F_Statistics"
+"Error.Thread1.Mains1F_Statistics"->"+DDB1"
+"+Timer" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+Timer <BR/>(LinuxTimer)</font></TD></TR></TABLE>>]
+"+Timings" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+Timings <BR/>(TimingDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+}

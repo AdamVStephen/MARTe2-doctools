@@ -1,0 +1,39 @@
+digraph G {
+rankdir=LR
+concentrate=true
+"Run.Thread1.GAMTimer" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GAMTimer <BR/>(IOGAM)</font></TD></TR></TABLE>>]
+"Run.Thread1.GAMTrigger" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GAMTrigger <BR/>(MathExpressionGAM)</font></TD></TR></TABLE>>]
+"Run.Thread1.GAMRef0" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GAMRef0 <BR/>(WaveformGAM::WaveformSin)</font></TD></TR></TABLE>>]
+"Run.Thread1.DisplayGAM" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">DisplayGAM <BR/>(IOGAM)</font></TD></TR></TABLE>>]
+"Run.Thread1.GAMSignalsWriter" [shape=record, style=filled, fillcolor=white, color=blue,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">GAMSignalsWriter <BR/>(IOGAM)</font></TD></TR></TABLE>>]
+subgraph cluster_Run {
+label = "State: Run"
+subgraph cluster_Run_Thread1 {
+label = "Thread: Thread1"
+color= "red"
+"Run.Thread1.GAMTimer"->"Run.Thread1.GAMTrigger"->"Run.Thread1.GAMRef0"->"Run.Thread1.DisplayGAM"->"Run.Thread1.GAMSignalsWriter"
+}
+}
+"+Timer"->"Run.Thread1.GAMTimer"
+"+Timings"->"Run.Thread1.GAMTimer"
+"Run.Thread1.GAMTimer"->"+DDB1"
+"+DDB1"->"Run.Thread1.GAMTrigger"
+"Run.Thread1.GAMTrigger"->"+DDB1"
+"+DDB1"->"Run.Thread1.GAMRef0"
+"Run.Thread1.GAMRef0"->"+DDB1"
+"+DDB1"->"Run.Thread1.DisplayGAM"
+"Run.Thread1.DisplayGAM"->"+LoggerDataSource"
+"+DDB1"->"Run.Thread1.GAMSignalsWriter"
+"Run.Thread1.GAMSignalsWriter"->"+SignalsWriter"
+"+Timer" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+Timer <BR/>(LinuxTimer)</font></TD></TR></TABLE>>]
+"+Timings" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+Timings <BR/>(TimingDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+LoggerDataSource" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+LoggerDataSource <BR/>(LoggerDataSource)</font></TD></TR></TABLE>>]
+"+DDB1" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+DDB1 <BR/>(GAMDataSource)</font></TD></TR></TABLE>>]
+"+SignalsWriter" [shape=record, style=filled, fillcolor=white, color=darkgreen,label=<<TABLE border="0" cellborder="0"><TR><TD width="60" height="60"><font point-size="12">+SignalsWriter <BR/>(FileDataSource::FileWriter)</font></TD></TR></TABLE>>]
+}
