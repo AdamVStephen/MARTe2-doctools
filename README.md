@@ -12,6 +12,8 @@ MARTe2 applications can be described using three alternative formats : cdb (conf
 2. CfgToCfg.ex : transforms an application description from cdb/json/xml to cdb/json/xml
 3. CfgToDot.ex : generates a series of several graphviz (dot) graphs which describe parts of the application
 
+See [this](doc/overview.md)  detailed explanation with an example application.
+
 ## CfgToDot
 
 A MARTe2 application is defined in several stanzas which describe respectively :
