@@ -41,4 +41,16 @@ a subset of the functions.
 
 ![graph](../examples/Sigtools/Waveform-1a/sta_Objects_0.png)
 
- 
+### Real-Time Application Graph
+
+This is a [hierarchical view](../examples/Sigtools/Waveform-1a/sta_RTApp.png) of the application, which gives a sense of the 
+execution order.   It shows the data sources and sinks in a group. Below this, for each *State* it shows the encapsulated
+Real-Time thread and the order in which the functions in that thread are called.  Note that the implicit broker executable
+objects are hidden from view in this analysis, because they are not visible directly from the application definition file.
+
+For each function in each thread, the function name and the class from which it is instantiated (though not yet the parameters)
+are shown.
+
+![graph](../examples/Sigtools/Waveform-1a/sta_RTApp.png)
+
+
