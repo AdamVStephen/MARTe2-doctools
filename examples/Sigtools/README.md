@@ -34,16 +34,12 @@ and you should be able to do this as per the earlier training.
 The documentation links below give more detailed instructions about
 what each example does and how to put each through its paces.
 
-## Waveform Examples
 
 ## FileWriter Examples
 
 1. [FileWriter-1](FileWriter-1/README.md) with a demo video on [YouTube](https://www.youtube.com/watch?v=-GuBPVnREkc) 
 1. [FileWriter-2](FileWriter-2/README.md)
 1. [FileWriter-3](FileWriter-3/README.md)
+1. [FileWriter-4X](FileWriter-4X/README.md) - beware 4X - this is a set of intentional dead ends as a pedagogical technique.
 
-
-
-
-
-
+## Waveform Examples
